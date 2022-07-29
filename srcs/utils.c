@@ -6,11 +6,17 @@
 /*   By: adlecler <adlecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 14:08:11 by adlecler          #+#    #+#             */
-/*   Updated: 2022/07/29 13:04:16 by adlecler         ###   ########.fr       */
+/*   Updated: 2022/07/29 13:24:06 by adlecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+int	print_error(char *str, int ret)
+{
+	ft_printf(str);
+	return (ret);
+}
 
 int	check_arg(char *s)
 {

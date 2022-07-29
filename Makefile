@@ -13,7 +13,13 @@ END = \033[0m
 
 NAME	        =		push_swap
 
-SRCS            =       $(wildcard srcs/*.c)
+SRCS            =       srcs/algo_for_3.c\
+						srcs/ft_algo_utils.c\
+						srcs/ft_algo.c\
+						srcs/list_utils.c\
+						srcs/operations.c\
+						srcs/push_swap.c\
+						srcs/utils.c
 
 INCLUDES_DIR     =       includes/
 
@@ -27,7 +33,7 @@ OBJS            =       ${SRCS:.c=.o}
 
 RM          =       rm -rf
 
-FLAGS       =       -Wall -Wextra -Werror -g3
+FLAGS       =       -Wall -Wextra -Werror
 
 %.o : %.c ./includes/push_swap.h
 						@${CC} ${FLAGS} -I${INCLUDES_DIR} -c $< -o ${<:.c=.o}
