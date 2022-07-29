@@ -6,7 +6,7 @@
 /*   By: adlecler <adlecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 16:44:58 by adlecler          #+#    #+#             */
-/*   Updated: 2022/07/28 18:06:53 by adlecler         ###   ########.fr       */
+/*   Updated: 2022/07/29 13:04:36 by adlecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,12 @@ void	ft_rename_list(t_stack *copy, t_stack *a)
 {
 	t_node	*i;
 	t_node	*j;
-	int	count;
+	int		count;
 
 	i = a->first;
 	j = copy->first;
 	count = 0;
-
-	while (j != NULL) /* tant que copy existe */
+	while (j != NULL)
 	{
 		if (i->nb != j->nb)
 		{
@@ -44,8 +43,8 @@ void	ft_rename_list(t_stack *copy, t_stack *a)
 /* Pour trier la copie */
 t_stack	*ft_sort_copy(t_stack *copy)
 {
-	t_node *i;
-	int	tmp;
+	t_node	*i;
+	int		tmp;
 
 	i = copy->first;
 	while (i != copy->last)
@@ -65,7 +64,7 @@ t_stack	*ft_sort_copy(t_stack *copy)
 
 void	ft_copy_list(t_stack *a, t_stack *copy)
 {
-	t_node *node;
+	t_node	*node;
 
 	node = a->first;
 	while (node != NULL)
@@ -77,7 +76,7 @@ void	ft_copy_list(t_stack *a, t_stack *copy)
 
 void	ft_copy_list_min(t_stack *a, t_stack *copy)
 {
-	t_node *node;
+	t_node	*node;
 	int		min;
 
 	node = a->first;
@@ -91,46 +90,11 @@ void	ft_copy_list_min(t_stack *a, t_stack *copy)
 	}
 }
 
-/*void	ft_algo_3(t_stack *a, t_stack *b)
-{
-	if (a->first->nb < a->first->next->nb && a->first->next->nb > a->first->next->next->nb && a->first->nb < a->first->next->next->nb)
-	{
-		ft_push_b(b, a);
-		ft_swap(a);
-		ft_printf("sa\n");
-		ft_push_a(a, b);
-	}
-	else if (a->first->nb > a->first->next->nb && a->first->next->nb < a->first->next->next->nb && a->first->nb < a->first->next->next->nb)
-	{
-		ft_swap(a);
-		ft_printf("sa\n");
-	}
-	else if (a->first->nb < a->first->next->nb && a->first->next->nb > a->first->next->next->nb && a->first->nb > a->first->next->next->nb)
-	{
-		ft_rev_rotate(a);
-		ft_printf("rra\n");
-	}
-	else if (a->first->nb > a->first->next->nb && a->first->next->nb < a->first->next->next->nb && a->first->nb > a->first->next->next->nb)
-	{
-		ft_rotate(a);
-		ft_printf("ra\n");
-	}
-	else
-	{
-		ft_rev_rotate(a);
-		ft_printf("rra\n");
-		ft_push_b(b, a);
-		ft_swap(a);
-		ft_printf("sa\n");
-		ft_push_a(a, b);
-	}
-}*/
-
 void	ft_algo_5(t_stack *a, t_stack *b)
 {
-	t_stack *copy;
+	t_stack	*copy;
 	int		min;
-	t_node *node;
+	t_node	*node;
 
 	copy = NULL;
 	while (ft_strlen_list(a) > 3)
@@ -193,7 +157,7 @@ void	ft_radix_sort(t_stack *a, t_stack *b)
 /* Fonction qui va selectionner quel algo doit-etre utilise */
 void	ft_algo(t_stack *a, t_stack *b)
 {
-	t_stack *copy;
+	t_stack	*copy;
 
 	copy = NULL;
 	copy = ft_init_stack(copy);
@@ -221,5 +185,4 @@ void	ft_algo(t_stack *a, t_stack *b)
 	else
 		ft_radix_sort(a, b);
 	copy = ft_delete_list(copy);
-
 }

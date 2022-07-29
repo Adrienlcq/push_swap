@@ -6,7 +6,7 @@
 /*   By: adlecler <adlecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 18:24:16 by adlecler          #+#    #+#             */
-/*   Updated: 2022/07/25 17:06:23 by adlecler         ###   ########.fr       */
+/*   Updated: 2022/07/29 13:03:10 by adlecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int	print_error(char *str, int ret)
 
 int	main(int ac, char **av)
 {
-	int	i;
-	t_stack *a;
-	t_stack *b;
+	int		i;
+	t_stack	*a;
+	t_stack	*b;
 	t_node	*tmp;
 
 	a = NULL;
@@ -36,13 +36,12 @@ int	main(int ac, char **av)
 	i = 0;
 	while (av[++i])
 	{
-		/* Check arguments */
 		if ((ft_atol(av[i]) < MIN_INT || ft_atol(av[i]) > MAX_INT)
 			|| check_arg(av[i]) == 1 || ft_strlen(av[i]) > 11 || ac < 2)
 		{
 			a = ft_delete_list(a);
 			b = ft_delete_list(b);
-			return (print_error("ERROR\n", 1));
+			return (print_error("ERROR\n", 2));
 		}
 		else
 		{
@@ -53,7 +52,7 @@ int	main(int ac, char **av)
 				{
 					a = ft_delete_list(a);
 					b = ft_delete_list(b);
-					return (print_error("ERROR C EST DE LA MERDE YA UN DOUBLON (T ES UNE MERDE)\n", 2));
+					return (print_error("ERROR\n", 2));
 				}
 				tmp = tmp->next;
 			}
@@ -61,7 +60,7 @@ int	main(int ac, char **av)
 			{
 				a = ft_delete_list(a);
 				b = ft_delete_list(b);
-				return (print_error("ERROR\n", 1));
+				return (print_error("ERROR\n", 2));
 			}
 		}
 	}
