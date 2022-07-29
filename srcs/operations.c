@@ -6,7 +6,7 @@
 /*   By: adlecler <adlecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 17:07:38 by adlecler          #+#    #+#             */
-/*   Updated: 2022/07/28 15:32:12 by adlecler         ###   ########.fr       */
+/*   Updated: 2022/07/29 12:59:16 by adlecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_swap(t_stack *s)
 {
-	int tmp;
-	
+	int	tmp;
+
 	if (ft_strlen_list(s) >= 2)
 	{
 		tmp = s->first->nb;
@@ -26,7 +26,7 @@ void	ft_swap(t_stack *s)
 
 void	ft_push_a(t_stack *a, t_stack *b)
 {
-	t_node *new;
+	t_node	*new;
 
 	if (!b || !b->first)
 	{
@@ -51,7 +51,7 @@ void	ft_push_a(t_stack *a, t_stack *b)
 
 void	ft_push_b(t_stack *b, t_stack *a)
 {
-	t_node *new;
+	t_node	*new;
 
 	if (!a || !a->first)
 		return ;

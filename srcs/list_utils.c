@@ -6,7 +6,7 @@
 /*   By: adlecler <adlecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 16:47:18 by adlecler          #+#    #+#             */
-/*   Updated: 2022/07/28 15:22:51 by adlecler         ###   ########.fr       */
+/*   Updated: 2022/07/29 12:57:45 by adlecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_stack	*ft_init_stack(t_stack *stack)
 /* Fonction pour ajouter un nombre dans la liste */
 int	ft_add_list(t_stack *a, int nbr)
 {
-	t_node *new;
+	t_node	*new;
 
 	new = malloc(sizeof(t_node));
 	if (new == NULL)
@@ -48,8 +48,8 @@ int	ft_add_list(t_stack *a, int nbr)
 
 int	ft_strlen_list(t_stack *s)
 {
-	int	i;
-	t_node *node;
+	int		i;
+	t_node	*node;
 
 	node = s->first;
 	i = 0;
@@ -80,8 +80,8 @@ t_stack	*ft_delete_list(t_stack *stack)
 
 int	is_min(t_stack *s)
 {
-	t_node *node;
-	int	min;
+	t_node	*node;
+	int		min;
 
 	node = s->first;
 	min = node->nb;

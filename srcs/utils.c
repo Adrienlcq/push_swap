@@ -6,13 +6,12 @@
 /*   By: adlecler <adlecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 14:08:11 by adlecler          #+#    #+#             */
-/*   Updated: 2022/07/23 15:26:00 by adlecler         ###   ########.fr       */
+/*   Updated: 2022/07/29 13:04:16 by adlecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-// 24 lignes // retourne 1 en cas d'erreur et 0 si ok
 int	check_arg(char *s)
 {
 	int	i;
@@ -21,7 +20,7 @@ int	check_arg(char *s)
 	{
 		i = 1;
 		if (!s[i])
-			return (1); // dans le cas d'un argument comme "-" ou "+"
+			return (1);
 		while (s[i])
 		{
 			if (s[i] < '0' || s[i] > '9')
@@ -41,7 +40,6 @@ int	check_arg(char *s)
 	return (0);
 }
 
-// 25 lignes // recupere av[i] en int pour le comparer a INT_MIN et INT_MAX
 long	ft_atol(const char *str)
 {
 	int		i;
@@ -71,10 +69,9 @@ long	ft_atol(const char *str)
 	return (result * negative);
 }
 
-/* Fonction pour checker si la liste passe en parametre est trie */
 int	ft_is_sorted(t_stack *stack)
 {
-	t_node *node;
+	t_node	*node;
 
 	node = stack->first;
 	while (node->next != NULL)
