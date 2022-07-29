@@ -6,7 +6,7 @@
 /*   By: adlecler <adlecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 12:12:57 by adlecler          #+#    #+#             */
-/*   Updated: 2022/07/28 18:04:41 by adlecler         ###   ########.fr       */
+/*   Updated: 2022/07/29 12:53:20 by adlecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@
 # include <stdlib.h>
 # include <string.h>
 
-typedef struct	s_node
+typedef struct s_node
 {
 	int				nb;
-	struct s_node *next;
+	struct s_node	*next;
 }	t_node;
 
-typedef struct	s_stack
+typedef struct s_stack
 {
 	t_node			*first;
 	t_node			*last;
@@ -44,7 +44,7 @@ int			is_min(t_stack *s);
 int			ft_is_sorted(t_stack *stack);
 long		ft_atol(const char *str);
 void		ft_algo(t_stack *a, t_stack *b);
-void    	ft_algo_3(t_stack *a);
+void		ft_algo_3(t_stack *a);
 void		ft_copy_list_min(t_stack *a, t_stack *copy);
 
 void		ft_push_a(t_stack *a, t_stack *b);
@@ -54,6 +54,6 @@ void		ft_rotate(t_stack *s);
 void		ft_rev_rotate(t_stack *s);
 
 /* DEBUG */
-void	debug(t_stack *a, t_stack *b);
+void		debug(t_stack *a, t_stack *b);
 
 #endif
